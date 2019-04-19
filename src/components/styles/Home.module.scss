@@ -1,0 +1,10 @@
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+
+.wrapper{
+    max-width: 1200px;
+}

@@ -1,0 +1,129 @@
+.slider{
+    background: red;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.imageWrapper{
+    width: 100%;
+    height: 80%;
+    background: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.img{
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.leftArrow, .rightArrow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 20;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid var(--lightGrey);
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.leftArrow{
+    left: 5%;
+    top: 50%;
+   
+    &:hover{
+        background: var(--pearl);
+    }
+
+    &:hover .leftArrow__innerEl{
+        border-left: 3px solid var(--lightGrey);
+        border-bottom: 3px solid var(--lightGrey);
+        border-right: 0px solid var(--lightGrey);
+        transform: rotate(45deg);
+    }
+
+    .leftArrow__innerEl{
+        width: 25px;
+        height: 25px;
+        border-left: 3px solid var(--lightGrey);
+        border-right: 3px solid var(--lightGrey);
+        transform: rotate(90deg);
+        transition: all .2s ease;
+    }
+}
+
+.rightArrow{
+    right: 5%;
+    top: 50%;
+   
+    &:hover{
+        background: var(--pearl);
+    }
+
+    &:hover .rightArrow__innerEl{
+        border-top: 3px solid var(--lightGrey);
+        border-bottom: 0px solid var(--lightGrey);
+        border-right: 3px solid var(--lightGrey);
+        transform: rotate(45deg);
+    }
+
+    .rightArrow__innerEl{
+        width: 25px;
+        height: 25px;
+        border-top: 3px solid var(--lightGrey);
+        border-bottom: 3px solid var(--lightGrey);
+        transform: rotate(0);
+        transition: all .2s ease;
+    }
+}
+
+.dots{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 22%;
+    left: 50%;
+    height: 30px;
+    transform: translateX(-50%);
+}
+
+.dot{
+    height: 20px;
+    width: 20px;
+    background: transparent;
+    border-radius: 50%;
+    margin: 10px;
+    border: 2px solid var(--lightGrey);
+    cursor: pointer;
+    transition: all .2s ease;
+
+    &:hover{
+        transform: scale(1.2);
+        background: var(--pearl);
+    }
+}
+
+.dotMarked{
+    composes: dot;
+    border: 2px solid white;
+    background: var(--formBlue);
+    box-shadow: 0 0 0 2px var(--formBlue);
+
+    &:hover{
+        transform: scale(1.1);
+        background: var(--formBlue);
+    }
+}

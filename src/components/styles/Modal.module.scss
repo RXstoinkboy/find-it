@@ -1,0 +1,36 @@
+.invisibleModal{
+    display: none;
+    position: absolute;
+    background: red;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    z-index: 100;
+}
+
+.invisibleShade{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: hsla(0, 0%, 5%, 90%);
+    z-index: 90;
+}
+
+.visible{
+    display: block;
+}
+
+// compose classes to display shade and modal
+.modal{
+    composes: invisibleModal;
+    display: block;
+}
+
+.shade{
+    composes: invisibleShade;
+    display: block;
+}

@@ -1,0 +1,92 @@
+.wrapper{
+    grid-column: 1/2;
+    grid-row: 1/-1;
+    width: 200px;
+    height: 150px;
+    background: transparent;
+    display: flex;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    &:hover *{
+        color: white;
+    }
+
+    &:hover .innerSqr{
+        transform: translate(-50%, -50%) scale(1.04);
+    }
+}
+
+.squareWrapper{
+    height: 100px;
+    width: 100px;
+    position: relative;
+}
+
+.bordersWrapper{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(1);
+    transition: all .2s ease;
+}
+
+.topLeftBorder, .topRightBorder, .botRightBorder, .botLeftBorder{
+    position: absolute;
+    height: 45px;
+    width: 45px;
+}
+
+.topLeftBorder{
+    top: 0%;
+    left: 0%;
+    background: red;
+}
+
+.topRightBorder{
+    top: 0%;
+    right: 0%;
+    background: green;
+}
+
+.botRightBorder{
+    bottom: 0%;
+    right: 0%;
+    background: var(--formBlue);
+}
+
+.botLeftBorder{
+    bottom: 0%;
+    left: 0%;
+    background: gold;
+}
+
+.innerSqr{
+    color: var(--lightGrey);
+    background: black;
+    text-transform: capitalize;
+    transition: all .2s ease;
+    font-size: 3rem;
+    transition: all .2s ease;
+    position: absolute;
+    height: 88%;
+    width: 88%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.logoText{
+    color: var(--lightGrey);
+    text-transform: capitalize;
+    transition: all .2s ease;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+}

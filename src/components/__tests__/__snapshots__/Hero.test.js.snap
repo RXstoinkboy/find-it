@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hero component renders correctly 1`] = `
+<section
+  className="slider"
+>
+  <div
+    className="imageWrapper"
+  >
+    <img
+      alt="apartment info - change it to something take from API"
+      className="img"
+      src="logo.jpg"
+    />
+  </div>
+  <button
+    className="leftArrow"
+  >
+    <span
+      className="leftArrow__innerEl"
+    />
+  </button>
+  <button
+    className="rightArrow"
+  >
+    <span
+      className="rightArrow__innerEl"
+    />
+  </button>
+  <div
+    className="dots"
+  >
+    <div
+      className="dotMarked"
+    />
+    <div
+      className="dot"
+    />
+    <div
+      className="dot"
+    />
+    <div
+      className="dot"
+    />
+    <div
+      className="dot"
+    />
+  </div>
+</section>
+`;
