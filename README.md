@@ -1,7 +1,22 @@
-# dream-house
+# Find It !
+## Introduction
 
-DREAM HOUSE becomes MY-FINDER.
+You can use this app to search for restaurants, events or specialists in your area.
 
-I will be honest. I thought that I will be able to do more with Zillow API. It turns out that a) I can't understand how to use it or b) it doesn't provide general search and there are issues with lots of data being restricted ...
+## Description
 
-My idea is to change this app into Yelp clone (with less functionality as I assume ... ) using their API (Yelp FUSION). 
+App based on Yelp API.
+
+I covered whole app with tests. Wherever I felt confident enough I tried TDD approach.
+
+## Technologies
+1. Geolocation API
+2. Speach recognition API
+3. Yelp API
+4. Designed in Invision Studio
+5. React
+6. Redux + Redux-Thunk
+7. Jest + Enzyme + enzyme-to-json + redux-mock-store
+
+Design inspired on original Yelp.
+Color scheme based on Pantone 2016. 
