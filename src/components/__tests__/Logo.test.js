@@ -1,26 +1,11 @@
 import React from 'react'
-import Logo from '../Logo'
-import {shallow, mount} from 'enzyme'
-import {MemoryRouter} from 'react-router'
+import {shallow} from 'enzyme'
+import toJson from 'enzyme-to-json'
 
-test('<Logo /> renders correctly', ()=>{
-    shallow(<Logo />)
-})
+import Logo from '../Logo.js'
 
-// zły test - trzeba przepisac
-test('Clicking on <Logo /> redirects to "/"',()=>{
-    const logo = mount(
-        <MemoryRouter initialEntries={['/test']} >
-            <Logo />
-        </MemoryRouter>
-    )
-    window.location = jest.fn();
-    console.log(`path before clicking: ${window.location.pathname}`);
+test('Logo renders correctly', ()=>{
+    const comp = shallow(<Logo />)
 
-
-    logo.simulate('click');
-
-    console.log(`path after clicking: ${window.location.pathname}`);
-
-    expect(window.location.pathname).toEqual('/');
+    expect(toJson(comp)).toMatchSnapshot()
 })

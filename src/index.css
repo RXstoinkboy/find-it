@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+/* @import url('https://fonts.googleapis.com/css?family=Lato:400,700'); */
+@import url('https://fonts.googleapis.com/css?family=Caveat:700|Kalam|Lato:400,700');
 
 html {
-  font-size: 100%;
+  box-sizing: border-box;
 }
 
-body {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto';
+  font-family: 'Lato';
   font-size: 1.1em;
   line-height: 1.5;
 }
@@ -18,9 +19,20 @@ a{
 }
 
 /* global variables */
-
 :root{
-  --formBlue: hsla(199, 50%, 60%, 70%);
+  --purple: hsl(241, 43%, 44%);
+  --arcticBlue: hsl(218, 10%, 85%);
+  --baige: hsl(30, 7%, 78%);
+  --darkGrey: hsl(0, 2%, 41%);
+  --lightGrey: hsl(0, 0%, 72%);
+  --serenity: hsl(219, 30%, 82%);
+  --rose: #F7CAC9;
+
+  --lightShadow: hsla(0, 0%, 0%, 36%);
+  --darkShadow: hsla(0, 0%, 0%, 50%);
+
+  --boxShadowTemplate: 2px 4px 12px var(--lightShadow);
+  /* --formBlue: hsla(199, 50%, 60%, 70%);
   --boxShadowTemplate: 0 0 3px 1px var(--formBlue);
   
   --lightGrey: hsl(0, 0%, 80%);
@@ -30,5 +42,5 @@ a{
   --secDark: hsla(0, 0%, 2%, 90%);
   --terDark: hsla(0, 0%, 5%, 90%);
 
-  --pearl: hsla(0, 0%, 95%, 30%);
+  --pearl: hsla(0, 0%, 95%, 30%); */
 }

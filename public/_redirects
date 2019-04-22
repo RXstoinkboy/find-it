@@ -1,1 +1,2 @@
-/api/* https://api.yelp.com/v3
+/v3/* https://api.yelp.com/
+/* /index.html 200
