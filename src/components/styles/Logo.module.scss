@@ -7,6 +7,12 @@
     transform: rotate(357deg);
 }
 
+.wrapperSmall{
+    composes: wrapper;
+    transform: scale(.5);
+    transform-origin: 0% 0%;
+}
+
 .logoText{
     display: flex;
     font-family: 'Caveat';

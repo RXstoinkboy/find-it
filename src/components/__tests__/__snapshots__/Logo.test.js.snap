@@ -1,8 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Logo renders correctly 1`] = `
-<div
-  className="wrapper"
+<Link
+  className="wrapperSmall"
+  to="/"
 >
   <h1
     className="logoText"
@@ -17,5 +18,5 @@ exports[`Logo renders correctly 1`] = `
   <div
     className="under"
   />
-</div>
+</Link>
 `;

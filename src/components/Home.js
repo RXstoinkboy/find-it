@@ -4,7 +4,7 @@ import Logo from './Logo'
 export const Home = () => {
     return (
         <div>
-            <Logo />
+            <Logo large />
             hello from HOME
         </div>
     );
