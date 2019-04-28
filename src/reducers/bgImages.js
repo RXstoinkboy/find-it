@@ -23,7 +23,7 @@ export const bgImages = (state = initialState, action) => {
                 error: null,
                 collectedData: [
                     ...state.collectedData,
-                    action.payload
+                    action.payload.bgImage
                 ]
             }
         case BG_LOAD_FAILURE:

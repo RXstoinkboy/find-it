@@ -9,11 +9,12 @@ export const bgLoad = (url, pictureNumber) => {
     return dispatch => {
         dispatch(bgLoadStart());
 
-        axios
-            .get(url, {
-                    headers: { Authorization: process.env.REACT_APP_API_KEY }   
-                })
-            .then(data => dispatch(bgLoadSuccess(data.photos[pictureNumber])))
+        axios.get(url, {
+            headers: {
+                Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
+            }
+        })
+            .then(res => dispatch(bgLoadSuccess(res.data.photos[pictureNumber])))
             .catch(err => dispatch(bgLoadFailure(err)))
     }
 }
@@ -24,11 +25,11 @@ const bgLoadStart = () => {
     }
 }
 
-const bgLoadSuccess = bgImages => {
+const bgLoadSuccess = bgImage => {
     return {
         type: BG_LOAD_SUCCESS,
         payload: {
-            ...bgImages
+            bgImage
         }
     }
 }

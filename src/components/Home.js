@@ -9,15 +9,17 @@ import TopCategories from './TopCategories'
 
 import {bgLoad} from '../actions/bgLoad'
 
+import axios from 'axios'
+
 export class Home extends Component {
 
     componentDidMount(){
         const urls = [
-            'businesses/LVXDZ167oWvRSyPDt9q18g',
-            '/businesses/camelot-cafe-krak%C3%B3w',
-            'businesses/trattoria-mamma-mia-krak%C3%B3w-2'
+            '/v3/businesses/LVXDZ167oWvRSyPDt9q18g',
+            '/v3/businesses/camelot-cafe-krak%C3%B3w',
+            '/v3/businesses/trattoria-mamma-mia-krak%C3%B3w-2'
         ]
-        this.props.bgLoad(urls[1], 1);
+        urls.forEach((url, idx) => this.props.bgLoad(url, idx));
     }
     
     render(){
