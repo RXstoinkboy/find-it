@@ -1,13 +1,46 @@
-import React from 'react';
-import Logo from './Logo'
+import React, {Component} from 'react';
+import styles from './styles/Home.module.scss'
+import {connect} from 'react-redux'
 
-export const Home = () => {
-    return (
-        <div>
-            <Logo large />
-            hello from HOME
-        </div>
-    );
+import BackgroundImage from './BackgroundImage'
+import UserUtilities from './UserUtilities'
+import SearchModule from './SearchModule'
+import TopCategories from './TopCategories'
+
+import {bgLoad} from '../actions/bgLoad'
+
+export class Home extends Component {
+
+    componentDidMount(){
+        const urls = [
+            'businesses/LVXDZ167oWvRSyPDt9q18g',
+            '/businesses/camelot-cafe-krak%C3%B3w',
+            'businesses/trattoria-mamma-mia-krak%C3%B3w-2'
+        ]
+        this.props.bgLoad(urls[1], 1);
+    }
+    
+    render(){
+        return (
+            <div className={styles.homeWrapper}>
+                <BackgroundImage />
+                <UserUtilities />
+                <SearchModule />
+                <TopCategories />
+            </div>
+        );
+    }
 };
 
-export default Home;
+const mapStateToProps = state => {
+    return {
+        collectedData: state.collectedData,
+        loading: state.loading
+    }
+}
+
+const mapDispatchToProps = {
+    bgLoad
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

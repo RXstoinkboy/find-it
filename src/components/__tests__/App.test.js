@@ -7,6 +7,7 @@ import {App} from '../App'
 import {Home} from '../Home'
 import {ProductList} from '../ProductList'
 import {Product} from '../Product'
+import Logo from '../Logo'
 
 describe('App', ()=>{
     it('renders correctly', ()=> {
@@ -23,6 +24,7 @@ describe('App', ()=>{
         expect(wrapper.find(Home)).toHaveLength(1);
         expect(wrapper.find(ProductList)).toHaveLength(0);
         expect(wrapper.find(Product)).toHaveLength(0);
+        expect(wrapper.find(Logo).prop('large')).toEqual(true);
 
         wrapper.unmount()
     })
