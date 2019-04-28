@@ -9,10 +9,10 @@ import TopCategories from './TopCategories'
 export const Home = () => {
     return (
         <div className={styles.homeWrapper}>
-            <BackgroundImage />
             <UserUtilities />
             <SearchModule />
             <TopCategories />
+            <BackgroundImage />
         </div>
     );
     

@@ -2,23 +2,32 @@ import React from 'react'
 import styles from './styles/BackgroundImage.module.scss'
 import {connect} from 'react-redux'
 
+import PropTypes  from 'prop-types'
+
 const BackgroundImage = props => {
     let content;
 
     if(props.collectedData.length >= 0){
-        content = props.collectedData.map(item => (
-            <>
-                <img className={styles.bgImage} src={item.image} alt={item.name} />
-                <a className={styles.link} href={item.url}>{item.name}</a>
-            </>
+        content = props.collectedData.map((item, idx) => (
+            <div key={idx} className={styles.slide}>
+                <img className={idx === 0 ? [styles.bgImage, styles.bgImageActive].join(' ') : styles.bgImage} src={item.image} alt={item.name} />
+                <a className={idx === 0 ? [styles.link, styles.linkActive].join(' ') : styles.link} href={item.url}>{item.name}</a>
+            </div>
         ))
     }
 
     return (
         <div className={styles.wrapper}>
-            {/* <img className={styles.bgImage} src={props.collectedData[0].image} alt={props.collectedData[0].name} />
-            <a className={styles.link} href={props.collectedData[0].url}>{props.collectedData[0].name}</a> */}
+            <button className={[styles.button, styles.buttonLeft].join(' ')}></button>
+            <button className={[styles.button, styles.buttonRight].join(' ')}></button>
+            
             {content}
+            
+            <div className="dotWrapper">
+                {content.map((item, idx) => (
+                    <div className="dot" key={idx}></div>        
+                ))}
+            </div>
         </div>
     );
 };
@@ -30,3 +39,7 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, null)(BackgroundImage);
+
+BackgroundImage.propTypes = {
+    collectedData: PropTypes.array.isRequired
+}
