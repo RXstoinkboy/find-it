@@ -14,7 +14,7 @@ export const bgLoad = (url, pictureNumber) => {
                 Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
             }
         })
-            .then(res => dispatch(bgLoadSuccess(res.data.photos[pictureNumber])))
+            .then(res => dispatch(bgLoadSuccess(res.data.photos[pictureNumber], res.data.name, res.data.url)))
             .catch(err => dispatch(bgLoadFailure(err)))
     }
 }
@@ -25,11 +25,13 @@ const bgLoadStart = () => {
     }
 }
 
-const bgLoadSuccess = bgImage => {
+const bgLoadSuccess = (bgImage, name, url) => {
     return {
         type: BG_LOAD_SUCCESS,
         payload: {
-            bgImage
+            bgImage,
+            name,
+            url
         }
     }
 }

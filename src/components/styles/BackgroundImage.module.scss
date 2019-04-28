@@ -1,0 +1,25 @@
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    .bgImage{
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        position: relative;
+    }
+
+    .link{
+        position: absolute;
+        bottom: 10vh;
+        left: 50%;
+        transform: translateX(-50%);
+        color: var(--darkGrey);
+
+        &:hover{
+            color: var(--rose);
+            text-decoration: underline;
+        }
+    }
+}
