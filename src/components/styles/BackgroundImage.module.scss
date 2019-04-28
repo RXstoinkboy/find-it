@@ -95,6 +95,30 @@
     z-index: -1;
 }
 
-.slideActive{
+.dotsWrapper{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    bottom: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
 
+    .dot{
+        height: 15px;
+        width: 15px;
+        border: 2px solid black;
+        border-radius: 50%;
+        margin: 0 .2rem;
+        cursor: pointer;
+
+        &:hover{
+            border: 2px solid var(--purple)
+        }
+    }
+
+    .dotActive{
+        background: var(--serenity);
+    }
 }
