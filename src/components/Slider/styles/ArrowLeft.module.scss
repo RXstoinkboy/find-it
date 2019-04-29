@@ -1,0 +1,13 @@
+.arrowLeft{
+    composes: arrow from './ArrowRight.module.scss';
+    left: 0;
+
+    &::after{
+        content: '';
+        width: 30px;
+        height: 30px;
+        border-top: 3px solid white;
+        border-left: 3px solid white;
+        transform: rotate(-45deg) translateX(10px);
+    }
+}
