@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slide renders correctly 1`] = `
+<Fragment>
+  <div
+    className="slide"
+    style={
+      Object {
+        "backgroundImage": "url(undefined)",
+        "backgroundPosition": "center",
+        "backgroundRepeat": "no-repeat",
+        "backgroundSize": "cover",
+      }
+    }
+  >
+    <a
+      className="link"
+      href="some example url"
+    >
+      hello example
+    </a>
+  </div>
+</Fragment>
+`;

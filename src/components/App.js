@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import {Route, Switch} from 'react-router-dom'
 import {connect} from 'react-redux'
+import PropTypes from 'prop-types'
+
 import {bgLoad} from '../actions/bgLoad'
 
 // components
@@ -50,3 +52,7 @@ const mapDispatchToProps = {
 }
 
 export default connect(null, mapDispatchToProps)(App);
+
+App.propTypes = {
+    bgLoad: PropTypes.func.isRequired
+}

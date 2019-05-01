@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders as expected 1`] = `
+<div
+  className="homeWrapper"
+>
+  <Connect(Slider) />
+  <UserUtilities />
+  <SearchModule />
+  <TopCategories />
+</div>
+`;

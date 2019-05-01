@@ -30,6 +30,7 @@ export class Slider extends Component {
         return (
             <div className={styles.slider}>
                 <div 
+                    id='slidesWrapper'
                     className={styles.slidesWrapper} 
                     style={{transform: `translateX(${-(this.props.currentImage * this.props.viewportWidth)}px)`}} 
                 >

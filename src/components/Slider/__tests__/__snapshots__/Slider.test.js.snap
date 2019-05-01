@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slider renders correctly 1`] = `
+<div
+  className="slider"
+>
+  <div
+    className="slidesWrapper"
+    id="slidesWrapper"
+    style={
+      Object {
+        "transform": "translateX(0px)",
+      }
+    }
+  />
+  <ArrowLeft
+    prevSlide={[Function]}
+  />
+  <ArrowRight
+    nextSlide={[Function]}
+  />
+</div>
+`;

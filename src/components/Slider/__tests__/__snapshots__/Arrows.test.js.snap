@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Arrows render correctly 1`] = `
+<button
+  className="arrowRight"
+  onClick={[MockFunction]}
+/>
+`;
+
+exports[`Arrows render correctly 2`] = `
+<button
+  className="arrowLeft"
+  onClick={[MockFunction]}
+/>
+`;

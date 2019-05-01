@@ -1,7 +1,8 @@
-import React from 'react';
+import React from 'react'
 import styles from './styles/Slide.module.scss'
+import PropTypes from 'prop-types'
 
-const Slide = props => {
+export const Slide = props => {
     const inlineStyle = {
         backgroundImage: `url(${props.image.image})`,
         backgroundPosition: 'center',
@@ -19,3 +20,7 @@ const Slide = props => {
 };
 
 export default Slide;
+
+Slide.propTypes = {
+    image: PropTypes.object.isRequired
+}
