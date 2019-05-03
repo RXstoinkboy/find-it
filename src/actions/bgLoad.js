@@ -5,11 +5,11 @@ import {
 
 import axios from 'axios'
 
-export const bgLoad = (url, pictureNumber) => {
+export const bgLoad = (url, pictureNumber=0) => {
     return dispatch => {
         dispatch(bgLoadStart());
 
-        axios.get(url, {
+        return axios.get(url, {
             headers: {
                 Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
             }
