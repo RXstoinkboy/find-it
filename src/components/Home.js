@@ -3,7 +3,7 @@ import styles from './styles/Home.module.scss'
 
 import Slider from './Slider/Slider'
 import UserUtilities from './UserUtilities'
-import SearchModule from './SearchModule'
+import SearchModule from './SearchModule/SearchModule'
 import TopCategories from './TopCategories'
 
 export const Home = () => {

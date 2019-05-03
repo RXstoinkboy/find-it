@@ -39,6 +39,21 @@ describe(`bgImages reducer`, ()=>{
 
     it(`returns correct state after NEXT_SLIDE`, ()=>{
         const nextSlide = {type: NEXT_SLIDE};
-        expect(bgImages(undefined, nextSlide)).toEqual({...initialState, currentImage: 1});
+
+        if(initialState.collectedData.length === 3 && initialState.currentImage === 3){
+            expect(bgImages(undefined, nextSlide)).toEqual({...initialState, currentImage: 0});
+        } else if(initialState.collectedData.length === 3 && initialState.currentImage === 2){
+            expect(bgImages(undefined, nextSlide)).toEqual({...initialState, currentImage: 3});
+        }
+    });
+
+    it(`returns correct state after NEXT_SLIDE`, ()=>{
+        const prevSlide = {type: PREV_SLIDE};
+
+        if(initialState.collectedData.length === 3 && initialState.currentImage === 2){
+            expect(bgImages(undefined, prevSlide)).toEqual({...initialState, currentImage: 1});
+        } else if (initialState.collectedData.length === 3 && initialState.currentImage === 0){
+            expect(bgImages(undefined, prevSlide)).toEqual({...initialState, currentImage: 3});
+        }
     })
 })
