@@ -1,11 +1,11 @@
 import React from 'react';
-import styles from './styles/SearchModule.scss'
+import styles from './styles/SearchModule.module.scss'
 
-const SearchModule = () => {
+const SearchModule = props => {
     return (
-        <div className={styles.wrapper}>
-            this is searchModule
-        </div>
+        <form className={styles.wrapper}>
+            {props.children}
+        </form>
     );
 };
 

@@ -1,9 +1,10 @@
 import React from 'react';
+import styles from './styles/TopCategories.module.scss'
 
-const TopCategories = () => {
+const TopCategories = props => {
     return (
-        <div>
-            this is top categories
+        <div className={styles.topCats}>
+            {props.children}
         </div>
     );
 };

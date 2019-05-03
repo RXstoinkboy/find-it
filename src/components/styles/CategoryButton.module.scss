@@ -1,0 +1,10 @@
+.category{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+
+    &:hover{
+        text-decoration: underline;
+    }
+}

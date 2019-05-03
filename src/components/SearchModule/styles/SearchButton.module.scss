@@ -1,0 +1,27 @@
+.searchButton{
+    height: 70px;
+    width: 70px;
+    border-radius: 0 3px 3px 0;
+    background: var(--serenity);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease;
+
+    &:hover{
+        box-shadow: 0 0 3px var(--serenity);
+        filter: brightness(1.1);
+    }
+
+    &:focus{
+        box-shadow: 0 0 10px var(--serenity);
+    }
+
+    .searchIcon{
+        height: 50%;
+        width: 50%;
+        color: white;
+    }
+}

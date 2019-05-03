@@ -1,0 +1,14 @@
+.location{
+    border: 1px solid var(--darkGrey);
+    padding: 0 .5rem 0 1rem;
+    height: 70px; 
+    transition: all .3s ease;
+
+    &:hover{
+        box-shadow: 0 0 8px var(--serenity);
+    }
+
+    &:focus{
+        box-shadow: 0 0 15px var(--serenity);
+    }
+}

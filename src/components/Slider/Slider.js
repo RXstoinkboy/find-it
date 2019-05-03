@@ -29,6 +29,7 @@ export class Slider extends Component {
     render(){
         return (
             <div className={styles.slider}>
+                {this.props.children}
                 <div 
                     id='slidesWrapper'
                     className={styles.slidesWrapper} 
