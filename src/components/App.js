@@ -4,6 +4,8 @@ import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 
 import {bgLoad} from '../actions/bgLoad'
+import {geolocation} from '../actions/geolocation'
+import {getLocation} from '../actions/getLocation'
 
 // components
 import Logo from './Logo'
@@ -26,11 +28,11 @@ export class App extends Component {
             {
                 source: '/v3/businesses/trattoria-mamma-mia-krak%C3%B3w-2',
                 pictureNumber: 1
-            },
-            
-            
+            }
         ]
         urls.forEach(item => this.props.bgLoad(item.source, item.pictureNumber));
+        this.props.geolocation();
+        // this.props.getLocation(this.props.location.lat, this.props.location.long);
     }
 
     render() {
@@ -47,12 +49,21 @@ export class App extends Component {
     }
 }
 
+// const mapStateToProps = state => {
+//     return {
+//         location: state.location
+//     }
+// }
+
 const mapDispatchToProps = {
-    bgLoad
+    bgLoad,
+    geolocation,
+    getLocation
 }
 
 export default connect(null, mapDispatchToProps)(App);
 
 App.propTypes = {
-    bgLoad: PropTypes.func.isRequired
+    bgLoad: PropTypes.func.isRequired,
+    geolocation: PropTypes.func.isRequired
 }

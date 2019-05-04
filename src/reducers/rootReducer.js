@@ -1,9 +1,9 @@
 import {combineReducers} from 'redux'
 
-import {exampleReducer} from './exampleReducer'
 import {bgImages} from './bgImages'
+import {location} from './location'
 
 export default combineReducers({
-    exampleReducer,
     bgImages,
+    location
 })
