@@ -13,10 +13,11 @@ I covered whole app with tests. Wherever I felt confident enough I tried TDD app
 1. Geolocation API
 2. Speach recognition API
 3. Yelp API
-4. Designed in Invision Studio
-5. React
-6. Redux + Redux-Thunk
-7. Jest + Enzyme + enzyme-to-json + redux-mock-store
+4. GeoDB Cities API -> http://geodb-cities-api.wirefreethought.com/docs/api/find-cities#/
+5. Designed in Invision Studio
+6. React
+7. Redux + Redux-Thunk
+8. Jest + Enzyme + enzyme-to-json + redux-mock-store
 
 Design inspired on original Yelp.
 Color scheme based on Pantone 2016. 

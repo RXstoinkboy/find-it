@@ -1,7 +1,6 @@
 {
   "private": true,
   "homepage": "https://create-react-app-redux.now.sh",
-  "proxy": "https://api.yelp.com",
   "scripts": {
     "deploy": "now && now alias",
     "start": "react-scripts start",
@@ -22,6 +21,7 @@
     "connected-react-router": "4.5.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",
+    "http-proxy-middleware": "^0.19.1",
     "node-sass": "^4.11.0",
     "react": "16.8.6",
     "react-dom": "16.8.6",
