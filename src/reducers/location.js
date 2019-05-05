@@ -4,7 +4,8 @@ import {
     GEOLOCATION_FAILURE,
     GET_LOCATION_START,
     GET_LOCATION_SUCCESS,
-    GET_LOCATION_FAILURE
+    GET_LOCATION_FAILURE,
+    SET_CITY
 } from '../actions/types'
 
 const initialState = {
@@ -51,6 +52,11 @@ export const location = (state = initialState, action) => {
                 ...state,
                 loading: false,
                 error: action.payload.err
+            }
+        case SET_CITY:
+            return {
+                ...state,
+                city: action.payload.value
             }
         default:
             return state;

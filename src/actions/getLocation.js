@@ -5,25 +5,35 @@ import {
 } from './types'
 
 import axios from 'axios'
+import { setCity } from './setCity';
 
-export const getLocation = (lat = null, long = null) => {
+export const getLocation = (lat = null, long = null, city = null) => {
     return dispatch => {
         dispatch(getLocationStart());
         
-        // if(city !== null){
-        //     return axios.get(`/gdb/geo/cities?limit=5&offset=0&namePrefix=${city}`)
-        //         .then(data => console.log(data))
-        //         .catch(err => console.log(err))
-        // }
-        return axios.get(`/v3/businesses/search?latitude=${lat}&longitude=${long}`, {
+        if(city !== null){
+            dispatch(setCity(city));
+            return axios.get(`/v3/businesses/search?location=${city}`, {
                 headers: {
                     Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
                 }
             })
             .then(res => {
-                console.log(res);
-                dispatch(getLocationSuccess(res.data.businesses[0].location.city))})
+                console.log(res)
+                // dispatch(getLocationSuccess(res.data.businesses[0].location.city))
+                // update this to get lat and long based on the city and update it in state
+            })
             .catch(err => dispatch(getLocationFailure(err)))
+        } else {
+            return axios.get(`/v3/businesses/search?latitude=${lat}&longitude=${long}`, {
+                    headers: {
+                        Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
+                    }
+                })
+                .then(res => {
+                    dispatch(getLocationSuccess(res.data.businesses[0].location.city))})
+                .catch(err => dispatch(getLocationFailure(err)))
+        }
     }
 }
 

@@ -1,7 +1,7 @@
 const proxy = require('http-proxy-middleware');
 
 module.exports = function(app) {
-    app.use(proxy('/gdb/**', { target: 'https://wft-geo-db.p.mashape.com/v1/', changeOrigin: true }));
+    app.use(proxy('/gdb/**', { target: 'https://wft-geo-db.p.mashape.com', changeOrigin: true }));
     app.use(proxy('/v3/**', { target: 'https://api.yelp.com', changeOrigin: true }))
 };
 

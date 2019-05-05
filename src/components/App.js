@@ -32,7 +32,6 @@ export class App extends Component {
         ]
         urls.forEach(item => this.props.bgLoad(item.source, item.pictureNumber));
         this.props.geolocation();
-        // this.props.getLocation(this.props.location.lat, this.props.location.long);
     }
 
     render() {
