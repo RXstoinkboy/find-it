@@ -11,19 +11,10 @@ export const getLocation = (lat = null, long = null, city = null) => {
     return dispatch => {
         dispatch(getLocationStart());
         
+        // if you change location by hand then it will be updated
         if(city !== null){
             dispatch(setCity(city));
-            return axios.get(`/v3/businesses/search?location=${city}`, {
-                headers: {
-                    Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
-                }
-            })
-            .then(res => {
-                console.log(res)
-                // dispatch(getLocationSuccess(res.data.businesses[0].location.city))
-                // update this to get lat and long based on the city and update it in state
-            })
-            .catch(err => dispatch(getLocationFailure(err)))
+        // on initial load, current location will be updated based on geolocation api
         } else {
             return axios.get(`/v3/businesses/search?latitude=${lat}&longitude=${long}`, {
                     headers: {

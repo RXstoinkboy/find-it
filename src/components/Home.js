@@ -3,7 +3,6 @@ import styles from './styles/Home.module.scss'
 import {connect} from 'react-redux'
 
 import {getLocation} from '../actions/getLocation'
-import {setCity} from '../actions/setCity'
 
 import Slider from './Slider/Slider'
 import UserUtilities from './UserUtilities'
@@ -19,8 +18,9 @@ import CategoryButton from './CategoryButton'
 export class Home extends Component {
     handleSetCity = e => {
         console.log(e.target.value);
-        this.props.getLocation(null, null, e.target.value);
+        this.props.getLocation(null, null, e.target.value)
     }
+    
     render(){
         return (
             <div className={styles.homeWrapper}>
@@ -52,8 +52,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-    getLocation,
-    setCity
+    getLocation
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
