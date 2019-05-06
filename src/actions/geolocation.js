@@ -9,14 +9,15 @@ import {getLocation} from './getLocation'
 export const geolocation = () => {
     return dispatch => {
         dispatch(geolocationStart());
-
+        // get latitude and longitude from geolocation API
         const success = position => {
             const lat = position.coords.latitude;
             const long = position.coords.longitude;
 
             console.log(`lat: ${lat}, long: ${long}`);
-
+            // pass data to the store
             dispatch(geolocationSuccess(lat, long));
+            // update city name based on received latitude and longitude
             dispatch(getLocation(lat, long));
         }
 

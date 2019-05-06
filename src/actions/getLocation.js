@@ -14,7 +14,7 @@ export const getLocation = (lat = null, long = null, city = null) => {
         // if you change location by hand then it will be updated
         if(city !== null){
             dispatch(setCity(city));
-        // on initial load, current location will be updated based on geolocation api
+        // on initial load, current location will be updated based on latitude and longitude from geolocation api
         } else {
             return axios.get(`/v3/businesses/search?latitude=${lat}&longitude=${long}`, {
                     headers: {

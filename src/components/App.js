@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
 
 import {bgLoad} from '../actions/bgLoad'
 import {geolocation} from '../actions/geolocation'
-import {getLocation} from '../actions/getLocation'
 
 // components
 import Logo from './Logo'
@@ -48,16 +47,9 @@ export class App extends Component {
     }
 }
 
-// const mapStateToProps = state => {
-//     return {
-//         location: state.location
-//     }
-// }
-
 const mapDispatchToProps = {
     bgLoad,
     geolocation,
-    getLocation
 }
 
 export default connect(null, mapDispatchToProps)(App);

@@ -17,7 +17,7 @@ import CategoryButton from './CategoryButton'
 
 export class Home extends Component {
     handleSetCity = e => {
-        console.log(e.target.value);
+        // change city name by typing
         this.props.getLocation(null, null, e.target.value)
     }
     

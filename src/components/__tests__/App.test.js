@@ -16,11 +16,12 @@ describe('App', ()=>{
     const store = mockStore();
 
     const bgLoadMock = jest.fn();
-
+    const geolocationMock = jest.fn();
+    
     it('renders correctly', ()=> {
         shallow(
             <Provider store={store}>
-                <App bgLoad={bgLoadMock} />
+                <App bgLoad={bgLoadMock} geolocation={geolocationMock}/>
             </Provider>
         )
     });

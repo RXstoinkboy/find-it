@@ -4,9 +4,23 @@ exports[`Home renders as expected 1`] = `
 <div
   className="homeWrapper"
 >
-  <Connect(Slider) />
-  <UserUtilities />
-  <SearchModule />
-  <TopCategories />
+  <Connect(Slider)>
+    <div
+      className="searchUtilsWrapper"
+    >
+      <SearchModule>
+        <SearchKeyword />
+        <Location
+          handleSetCity={[Function]}
+        />
+        <SearchButton />
+      </SearchModule>
+      <TopCategories>
+        <CategoryButton />
+        <CategoryButton />
+        <CategoryButton />
+      </TopCategories>
+    </div>
+  </Connect(Slider)>
 </div>
 `;
