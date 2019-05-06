@@ -29,13 +29,13 @@ export const geolocation = () => {
     }
 }
 
-const geolocationStart = () => {
+export const geolocationStart = () => {
     return {
         type: GEOLOCATION_START
     }
 }
 
-const geolocationSuccess = (lat, long) => {
+export const geolocationSuccess = (lat, long) => {
     return {
         type: GEOLOCATION_SUCCESS,
         payload: {
@@ -45,7 +45,7 @@ const geolocationSuccess = (lat, long) => {
     }
 }
 
-const geolocationFailure = err => {
+export const geolocationFailure = err => {
     return {
         type: GEOLOCATION_FAILURE,
         payload: {err}

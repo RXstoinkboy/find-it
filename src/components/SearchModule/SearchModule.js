@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './styles/SearchModule.module.scss'
 
 
-const SearchModule = props => {
+export const SearchModule = props => {
     return (
         <form className={styles.wrapper}>
             {props.children}

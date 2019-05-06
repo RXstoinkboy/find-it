@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from './styles/Location.module.scss'
+import PropTypes from 'prop-types'
 
-const Location = props => {
+export const Location = props => {
     return (
         <input 
             type="search" 
@@ -13,3 +14,8 @@ const Location = props => {
 };
 
 export default Location;
+
+Location.propTypes = {
+    handleCity: PropTypes.func.isRequired,
+    city: PropTypes.string.isRequired
+}

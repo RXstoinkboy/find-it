@@ -5,27 +5,31 @@ import {
 
 import axios from 'axios'
 
-export const bgLoad = (url, pictureNumber=0) => {
+export const bgLoad = (url, pictureNumber = 0) => {
     return dispatch => {
         dispatch(bgLoadStart());
 
-        return axios.get(url, {
-            headers: {
-                Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
-            }
-        })
-            .then(res => dispatch(bgLoadSuccess(res.data.photos[pictureNumber], res.data.name, res.data.url)))
-            .catch(err => dispatch(bgLoadFailure(err)))
+        return fetchData(url, pictureNumber);
     }
 }
 
-const bgLoadStart = () => {
+export const fetchData = (url, pictureNumber) => {
+    axios.get(url, {
+        headers: {
+            Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
+        }
+    })
+        .then(res => dispatch(bgLoadSuccess(res.data.photos[pictureNumber], res.data.name, res.data.url)))
+        .catch(err => dispatch(bgLoadFailure(err)))
+}
+
+export const bgLoadStart = () => {
     return {
         type: BG_LOAD_START
     }
 }
 
-const bgLoadSuccess = (bgImage, name, url) => {
+export const bgLoadSuccess = (bgImage, name, url) => {
     return {
         type: BG_LOAD_SUCCESS,
         payload: {
@@ -36,7 +40,7 @@ const bgLoadSuccess = (bgImage, name, url) => {
     }
 }
 
-const bgLoadFailure = error => {
+export const bgLoadFailure = error => {
     return {
         type: BG_LOAD_FAILURE,
         payload: {

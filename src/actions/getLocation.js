@@ -28,13 +28,13 @@ export const getLocation = (lat = null, long = null, city = null) => {
     }
 }
 
-const getLocationStart = () => {
+export const getLocationStart = () => {
     return {
         type: GET_LOCATION_START
     }
 }
 
-const getLocationSuccess = city => {
+export const getLocationSuccess = city => {
     return {
         type: GET_LOCATION_SUCCESS,
         payload: {
@@ -43,7 +43,7 @@ const getLocationSuccess = city => {
     }
 }
 
-const getLocationFailure = err => {
+export const getLocationFailure = err => {
     return {
         type: GET_LOCATION_FAILURE,
         payload: {err}

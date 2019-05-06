@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Location renders correctly 1`] = `
+<input
+  className="location"
+  placeholder="Where are you?"
+  type="search"
+  value="New York"
+/>
+`;

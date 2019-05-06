@@ -8,7 +8,7 @@ import {
     SET_CITY
 } from '../actions/types'
 
-const initialState = {
+export const initialState = {
     loading: false,
     error: null,
     lat: null,
@@ -34,7 +34,7 @@ export const location = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                errror: action.payload.err
+                error: action.payload.err
             }
         case GET_LOCATION_START:
             return {

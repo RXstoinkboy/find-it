@@ -11,6 +11,8 @@ exports[`Home renders as expected 1`] = `
       <SearchModule>
         <SearchKeyword />
         <Location
+          city="New York"
+          handleCity={[MockFunction]}
           handleSetCity={[Function]}
         />
         <SearchButton />
