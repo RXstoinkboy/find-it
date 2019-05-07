@@ -1,0 +1,50 @@
+.wrapper{
+    position: absolute;
+    width: 100%;
+    background: white;
+    box-shadow: var(--boxShadowTemplate);
+    font-size: 1rem;
+    padding: .4rem;
+    top: 100%;
+    border-radius: 3px;
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all .3s ease;
+}
+
+.wrapperActive{
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section{
+    margin-bottom: 10px;
+}
+
+.sectionTitle{
+    font-size: .8rem;
+    font-weight: 700;
+    font-style: italic;
+    margin: 0 .5rem;
+    text-transform: capitalize;
+}
+
+.contentList{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.contentItem{
+    font-size: 1.2rem;
+    padding: .1rem .2rem;
+    margin: 0 .3rem;
+    cursor: pointer;
+    border-radius: 3px;
+
+    &:hover{
+        background: var(--lightGrey);
+    }
+}

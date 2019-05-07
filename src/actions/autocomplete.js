@@ -10,15 +10,13 @@ export const autocomplete = (keyword, lat, long) => {
     return dispatch => {
         dispatch(autoStart);
 
-        return axios.get(`/v3/autocomplete?text=${keyword}&lat=${lat}&long=${long}&locale=pl_PL`, {
+        return axios.get(`/v3/autocomplete?text=${keyword}&latitude=${lat}&longitude=${long}&locale=pl_PL`, {
             headers: {
                 Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
             }
         })
-            .then(data => {
-                console.log(data)
-            })
-            .catch(error => console.log(error))
+            .then(res => dispatch(autoSuccess(res.data)))
+            .catch(error => dispatch(autoFailure(error)))
     }
 }
 

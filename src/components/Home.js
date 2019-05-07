@@ -38,7 +38,7 @@ export class Home extends Component {
         }
         this.setState({
             // typingKeyword: setTimeout(()=>{console.log('typing')}, 2000)
-            typingKeyword: setTimeout(()=>{this.props.autocomplete(this.props.keywordToSearch, this.props.lat, this.props.long)}, 2000)
+            typingKeyword: setTimeout(()=>{this.props.autocomplete(this.props.keywordToSearch, this.props.lat, this.props.long)}, 500)
 
         })
 
