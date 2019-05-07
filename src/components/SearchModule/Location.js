@@ -16,6 +16,6 @@ export const Location = props => {
 export default Location;
 
 Location.propTypes = {
-    handleCity: PropTypes.func.isRequired,
+    handleSetCity: PropTypes.func.isRequired,
     city: PropTypes.string.isRequired
 }
