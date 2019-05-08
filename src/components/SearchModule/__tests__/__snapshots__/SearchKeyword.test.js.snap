@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchKeyword renderd correctly 1`] = `
+<div
+  className="wrapper"
+>
+  <input
+    className="searchInput"
+    onBlur={[Function]}
+    onChange={[MockFunction]}
+    onFocus={[Function]}
+    placeholder="Search by name, category etc..."
+    type="search"
+    value="wiel"
+  />
+  <ResultsMod
+    focus={false}
+    handleSearch={[MockFunction]}
+    keywordToSearch="wiel"
+  />
+</div>
+`;

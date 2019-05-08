@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultsMod renders correctly 1`] = `
+<div
+  className="wrapper"
+>
+  <section
+    className="section"
+    key="cats"
+  >
+    <h4
+      className="sectionTitle"
+    />
+    <ul
+      className="contentList"
+    />
+  </section>
+  <section
+    className="section"
+    key="dogs"
+  >
+    <h4
+      className="sectionTitle"
+    />
+    <ul
+      className="contentList"
+    />
+  </section>
+</div>
+`;

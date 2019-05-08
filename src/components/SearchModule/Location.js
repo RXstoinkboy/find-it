@@ -13,14 +13,9 @@ export class Location extends Component {
         }
     }
 
-    handleFocus = e => {
+    toggleFocus = e => {
         this.setState({
-            focus: true
-        })
-    }
-    handleBlur = e => {
-        this.setState({
-            focus: false
+            focus: !this.state.focus
         })
     }
 
@@ -31,11 +26,11 @@ export class Location extends Component {
                     type="search" 
                     placeholder='Where are you?' 
                     onChange={this.props.handleSetCity}
-                    onFocus={this.handleFocus}
-                    onBlur={this.handleBlur}
+                    onFocus={this.toggleFocus}
+                    onBlur={this.toggleFocus}
                     className={styles.location} 
                     value={this.props.city}/>
-                <CitiesMod {...this.props} focus={this.state.focus}/>
+                <CitiesMod {...this.props} focus={this.state.focus} />
             </div>
         );
     }

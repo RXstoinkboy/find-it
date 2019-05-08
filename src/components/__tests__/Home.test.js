@@ -4,8 +4,7 @@ import {shallow} from 'enzyme'
 import {Home} from '../Home'
 
 test(`Home renders as expected`, ()=> {
-    const mockFn = jest.fn();
-    const home = shallow(<Home city='New York' handleCity={mockFn}/>)
+    const home = shallow(<Home />)
 
     expect(toJson(home)).toMatchSnapshot()
 })

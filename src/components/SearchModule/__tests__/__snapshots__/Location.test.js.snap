@@ -1,10 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Location renders correctly 1`] = `
-<input
-  className="location"
-  placeholder="Where are you?"
-  type="search"
-  value="New York"
-/>
+<div
+  className="wrapper"
+>
+  <input
+    className="location"
+    onBlur={[Function]}
+    onChange={[MockFunction]}
+    onFocus={[Function]}
+    placeholder="Where are you?"
+    type="search"
+    value="New York"
+  />
+  <CitiesMod
+    cities={
+      Array [
+        1,
+        2,
+      ]
+    }
+    city="New York"
+    focus={false}
+    handleSetCity={[MockFunction]}
+  />
+</div>
 `;

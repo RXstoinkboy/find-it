@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './styles/ResultsMod.module.scss'
+import PropTypes from 'prop-types'
 
 export const ResultsMod = props => {
     return (
@@ -17,11 +18,22 @@ export const ResultsMod = props => {
                     {/* display content of each category */}
                     <ul className={styles.contentList}>
                         {props.autocompleteResults[section].map((item, idx) => (
-                            <li className={styles.contentItem} key={idx}>{
-                                section === 'categories' ? item.title
-                                    : section === 'businesses' ? item.name
-                                        : item.text
-                            }</li>
+                            <li 
+                                onMouseDown={props.handlePickWord}
+                                value={
+                                    section === 'categories' ? item.title
+                                        : section === 'businesses' ? item.name
+                                            : item.text
+                                }
+                                className={styles.contentItem} 
+                                key={idx}
+                            >
+                                {
+                                    section === 'categories' ? item.title
+                                        : section === 'businesses' ? item.name
+                                            : item.text
+                                }
+                            </li>
                         ))}
                     </ul>
                 </section>
@@ -32,3 +44,10 @@ export const ResultsMod = props => {
 };
 
 export default ResultsMod;
+
+ResultsMod.propTypes = {
+    focus: PropTypes.bool.isRequired,
+    keywordToSearch: PropTypes.string.isRequired,
+    autocompleteResults: PropTypes.object,
+    handlePickWord: PropTypes.func
+}

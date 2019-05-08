@@ -12,14 +12,9 @@ export class SearchKeyword extends Component {
         }
     }
 
-    handleFocus = e => {
+    toggleFocus = e => {
         this.setState({
-            focus: true
-        })
-    }
-    handleBlur = e => {
-        this.setState({
-            focus: false
+            focus: !this.state.focus
         })
     }
 
@@ -30,8 +25,8 @@ export class SearchKeyword extends Component {
                     type="search" 
                     placeholder='Search by name, category etc...' 
                     onChange={this.props.handleSearch}
-                    onFocus={this.handleFocus}
-                    onBlur={this.handleBlur}
+                    onFocus={this.toggleFocus}
+                    onBlur={this.toggleFocus}
                     value={this.props.keywordToSearch}
                     className={styles.searchInput} />
                 <ResultsMod {...this.props} focus={this.state.focus}/>

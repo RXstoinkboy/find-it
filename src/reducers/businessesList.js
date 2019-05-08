@@ -9,7 +9,8 @@ const initialState = {
     error: null,
     businesses: [],
     total: 0,
-    region: {}
+    offset: 0,
+    // region: {}
 }
 
 export const businessesList = (state = initialState, action) => {
@@ -24,6 +25,8 @@ export const businessesList = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
+                businesses: action.payload.data.businesses,
+                total: action.payload.data.total
             };
         case SEARCH_FAILURE:
             return {

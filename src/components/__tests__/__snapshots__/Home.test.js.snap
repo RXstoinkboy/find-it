@@ -8,19 +8,17 @@ exports[`Home renders as expected 1`] = `
     <div
       className="searchUtilsWrapper"
     >
-      <SearchModule>
-        <SearchKeyword />
-        <Location
-          city="New York"
-          handleCity={[MockFunction]}
-          handleSetCity={[Function]}
-        />
-        <SearchButton />
-      </SearchModule>
+      <Connect(SearchModule) />
       <TopCategories>
-        <CategoryButton />
-        <CategoryButton />
-        <CategoryButton />
+        <CategoryButton
+          title="Restaurants"
+        />
+        <CategoryButton
+          title="Nightlife"
+        />
+        <CategoryButton
+          title="Food Delivery Service"
+        />
       </TopCategories>
     </div>
   </Connect(Slider)>

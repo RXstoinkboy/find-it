@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from './styles/SearchButton.module.scss'
 import {ReactComponent as SearchIcon} from '../../assets/img/search.svg'
+import PropTypes from 'prop-types'
 
-const SearchButton = props => {
+export const SearchButton = props => {
     return (
         <button 
             // type='submit'
@@ -15,3 +16,7 @@ const SearchButton = props => {
 };
 
 export default SearchButton;
+
+SearchButton.propTypes = {
+    handleGetBusinessesList: PropTypes.func.isRequired
+}

@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CitiesMod renders correctly 1`] = `
+<div
+  className="wrapper"
+>
+  <section
+    className="section"
+  >
+    <ul
+      className="contentList"
+    >
+      <li
+        className="contentItem"
+        key="0"
+        onMouseDown={[MockFunction]}
+      />
+      <li
+        className="contentItem"
+        key="1"
+        onMouseDown={[MockFunction]}
+      />
+    </ul>
+  </section>
+</div>
+`;

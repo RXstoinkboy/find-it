@@ -9,12 +9,12 @@ export const getBusinessesList = (term, location) => {
     return dispatch => {
         dispatch(searchStart());
 
-        return axios.get(`/v3/businesses/search?term=${term}&location=${location}`, {
+        return axios.get(`/v3/businesses/search?term=${term}&location=${location}&limit=20&offset=0`, {
             headers: {
                 Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
             }
         })
-            .then(res => dispatch(searchSuccess(res)))
+            .then(res => dispatch(searchSuccess(res.data)))
             .catch(error => dispatch(searchFailure(error)))
     }
 }

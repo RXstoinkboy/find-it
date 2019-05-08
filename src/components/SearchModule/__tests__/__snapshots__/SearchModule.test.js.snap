@@ -3,5 +3,59 @@
 exports[`SearchModule renders correctly 1`] = `
 <form
   className="wrapper"
-/>
+>
+  <SearchKeyword
+    autocomplete={[MockFunction]}
+    autocompleteResults={
+      Array [
+        1,
+        2,
+      ]
+    }
+    cities={
+      Array [
+        3,
+        4,
+      ]
+    }
+    city="city"
+    getBusinessesList={[MockFunction]}
+    getLocation={[MockFunction]}
+    handlePickWord={[Function]}
+    handleSearch={[Function]}
+    keywordToSearch="word"
+    lat={1}
+    latLong={[MockFunction]}
+    long={2}
+    searchKeyword={[MockFunction]}
+  />
+  <Location
+    autocomplete={[MockFunction]}
+    autocompleteResults={
+      Array [
+        1,
+        2,
+      ]
+    }
+    cities={
+      Array [
+        3,
+        4,
+      ]
+    }
+    city="city"
+    getBusinessesList={[MockFunction]}
+    getLocation={[MockFunction]}
+    handlePickCity={[Function]}
+    handleSetCity={[Function]}
+    keywordToSearch="word"
+    lat={1}
+    latLong={[MockFunction]}
+    long={2}
+    searchKeyword={[MockFunction]}
+  />
+  <SearchButton
+    handleGetBusinessesList={[Function]}
+  />
+</form>
 `;
