@@ -5,7 +5,10 @@ import {
     GET_LOCATION_START,
     GET_LOCATION_SUCCESS,
     GET_LOCATION_FAILURE,
-    SET_CITY
+    SET_CITY,
+    LAT_LONG_START,
+    LAT_LONG_SUCCESS,
+    LAT_LONG_FAILURE
 } from '../actions/types'
 
 export const initialState = {
@@ -13,7 +16,8 @@ export const initialState = {
     error: null,
     lat: null,
     long: null,
-    city: ''
+    city: '',
+    cities: []
 }
 
 export const location = (state = initialState, action) => {
@@ -57,6 +61,23 @@ export const location = (state = initialState, action) => {
             return {
                 ...state,
                 city: action.payload.value
+            }
+        case LAT_LONG_START:
+            return {
+                ...state, 
+                loading: true
+            }
+        case LAT_LONG_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                cities: action.payload.locationData.data
+            }
+        case LAT_LONG_FAILURE:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload.error
             }
         default:
             return state;

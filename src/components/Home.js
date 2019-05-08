@@ -5,6 +5,8 @@ import {connect} from 'react-redux'
 import {getLocation} from '../actions/getLocation'
 import {searchKeyword} from '../actions/searchKeyword'
 import {autocomplete} from '../actions/autocomplete'
+import {latLong} from '../actions/latLong'
+import {getBusinessesList} from '../actions/getBusinessesList'
 
 import Slider from './Slider/Slider'
 import UserUtilities from './UserUtilities'
@@ -27,22 +29,39 @@ export class Home extends Component {
     }
     handleSetCity = e => {
         // change city name by typing
+        this.props.getLocation(null, null, e.target.value);
 
-        // the same as with autocomplete let's proceed to communicate with World Cities DB
-        this.props.getLocation(null, null, e.target.value)
+        if(this.state.typingCity){
+            clearTimeout(this.state.typingCity)
+        }
+
+        if(this.props.city !== ''){
+            this.setState({
+                typingCity: setTimeout(()=>{this.props.latLong(this.props.city)}, 500)
+            })
+        }
     }
     
     handleSearch = e => {
         if(this.state.typingKeyword){
             clearTimeout(this.state.typingKeyword)
         }
-        this.setState({
-            // typingKeyword: setTimeout(()=>{console.log('typing')}, 2000)
-            typingKeyword: setTimeout(()=>{this.props.autocomplete(this.props.keywordToSearch, this.props.lat, this.props.long)}, 500)
 
-        })
+        // if(this.props.keywordToSearch !== ''){
+            this.setState({
+                // typingKeyword: setTimeout(()=>{console.log('typing')}, 2000)
+                typingKeyword: setTimeout(()=>{this.props.autocomplete(this.props.keywordToSearch, this.props.lat, this.props.long)}, 500)
+    
+            })
+        // }
 
         this.props.searchKeyword(e.target.value)
+    }
+
+    handleGetBusinessesList = e => {
+        console.log('looking for results');
+        this.props.getBusinessesList(this.props.keywordToSearch, this.props.city);
+        e.preventDefault();
     }
 
     render(){
@@ -56,12 +75,12 @@ export class Home extends Component {
                             {...this.props} handleSearch={this.handleSearch}/>
                             <Location 
                             {...this.props} handleSetCity={this.handleSetCity}/>
-                            <SearchButton />
+                            <SearchButton handleGetBusinessesList={this.handleGetBusinessesList}/>
                         </SearchModule>
                         <TopCategories>
-                            <CategoryButton />
-                            <CategoryButton />
-                            <CategoryButton />
+                            <CategoryButton title='Restaurants' />
+                            <CategoryButton title='Nightlife'/>
+                            <CategoryButton title='Food Delivery Service'/>
                         </TopCategories>
                     </div>
                 </Slider> 
@@ -75,6 +94,7 @@ const mapStateToProps = state => {
         city: state.location.city,
         keywordToSearch: state.data.keywordToSearch,
         autocompleteResults: state.data.autocompleteResults,
+        cities: state.location.cities,
         lat: state.location.lat,
         long: state.location.long
     }
@@ -83,7 +103,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
     getLocation,
     searchKeyword,
-    autocomplete
+    autocomplete,
+    latLong,
+    getBusinessesList
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

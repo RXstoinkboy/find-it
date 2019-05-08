@@ -1,10 +1,10 @@
 import React from 'react'
 import styles from './styles/CategoryButton.module.scss'
 
-const CategoryButton = () => {
+const CategoryButton = props => {
     return (
         <button className={styles.category}>
-            Restaurants
+            {props.title}
         </button>
     );
 };
