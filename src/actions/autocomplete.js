@@ -8,7 +8,7 @@ import axios from 'axios'
 
 export const autocomplete = (keyword, lat, long) => {
     return dispatch => {
-        dispatch(autoStart);
+        dispatch(autoStart());
 
         return axios.get(`/v3/autocomplete?text=${keyword}&latitude=${lat}&longitude=${long}&locale=pl_PL`, {
             headers: {

@@ -6,12 +6,20 @@ import {
 import {
     latLongStart,
     latLongSuccess,
-    latLongFailure
+    latLongFailure,
+    latLong
 } from '../latLong'
 import configureStore from 'redux-mock-store'
-import { escapeComponent } from 'uri-js';
+import axios from 'axios'
+import MockAdapter from 'axios-mock-adapter'
+import thunk from 'redux-thunk'
 
-const mockStore = configureStore();
+const mock = new MockAdapter(axios);
+mock.onGet('/geo/cities?limit=5&namePrefix=test&sort=-population').reply(200, {
+    data: 'hello'
+})
+
+const mockStore = configureStore([thunk]);
 const store = mockStore();
 
 describe(`latLong action`, ()=> {
@@ -46,5 +54,21 @@ describe(`latLong action`, ()=> {
 
         store.dispatch(latLongFailure('there was error'));
         expect(store.getActions()).toEqual(expectedActions)
+    })
+
+    it(`return expected actions and payload after using latLong`, ()=> {
+        const expectedActions = [
+            {type: LAT_LONG_START},
+            {
+                type: LAT_LONG_SUCCESS,
+                payload: {
+                    locationData: {data: 'hello'}
+                }
+            },
+        ]
+
+        return store.dispatch(latLong('test')).then(()=>{
+            expect(store.getActions()).toEqual(expectedActions)
+        })
     })
 })

@@ -6,11 +6,20 @@ import {
 import {
     searchStart,
     searchSuccess,
-    searchFailure
+    searchFailure,
+    getBusinessesList
 } from '../getBusinessesList' 
 import configureStore from 'redux-mock-store'
+import axios from 'axios'
+import MockAdapter from 'axios-mock-adapter'
+import thunk from 'redux-thunk'
 
-const mockStore = configureStore();
+const mock = new MockAdapter(axios);
+mock.onGet(`/v3/businesses/search?term=testTerm&location=testLoc&limit=20&offset=0`).reply(200, {
+    data: 'hello'
+})
+
+const mockStore = configureStore([thunk]);
 const store = mockStore();
 
 describe(`getBusinessesList action`, ()=> {
@@ -45,5 +54,21 @@ describe(`getBusinessesList action`, ()=> {
 
         store.dispatch(searchFailure('something went wrong'));
         expect(store.getActions()).toEqual(expectedActions)
+    })
+
+    it(`return correct actions and payload while contacting API`, ()=> {
+        const expectedActions = [
+            {type: SEARCH_START},
+            {
+                type: SEARCH_SUCCESS,
+                payload: {
+                    data: {data: 'hello'}
+                }
+            }
+        ]
+
+        return store.dispatch(getBusinessesList('testTerm', 'testLoc')).then(()=> {
+            expect(store.getActions()).toEqual(expectedActions)
+        })
     })
 })

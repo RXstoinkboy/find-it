@@ -8,7 +8,7 @@ import axios from 'axios'
 
 export const latLong = city => {
     return dispatch => {
-        dispatch(latLongStart);
+        dispatch(latLongStart());
 
         return axios.get(`/geo/cities?limit=5&namePrefix=${city}&sort=-population`, {
             headers: {

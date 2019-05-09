@@ -6,11 +6,22 @@ import {
 import {
     getLocationStart,
     getLocationSuccess,
-    getLocationFailure
+    getLocationFailure,
+    getLocation
 } from '../getLocation'
 import configureStore from 'redux-mock-store'
+import axios from 'axios'
+import MockAdapter from 'axios-mock-adapter'
+import thunk from 'redux-thunk'
 
-const mockStore = configureStore();
+const mock = new MockAdapter(axios);
+mock.onGet('/v3/businesses/search?latitude=1&longitude=1').reply(200, {
+    businesses: [
+        {location: {city: 'testCity'}}
+    ]
+})
+
+const mockStore = configureStore([thunk]);
 const store = mockStore();
 
 describe(`getLocation`, ()=> {
@@ -48,5 +59,21 @@ describe(`getLocation`, ()=> {
 
         store.dispatch(getLocationFailure('bad error'));
         expect(store.getActions()).toEqual(expectedActions);
+    })
+
+    it(`return correct action and payload on getLocation`, ()=> {
+        const expectedActions = [
+            {type: GET_LOCATION_START},
+            {
+                type: GET_LOCATION_SUCCESS,
+                payload: {
+                    city: 'testCity'
+                }
+            }
+        ]
+
+        return store.dispatch(getLocation(1,1,null)).then(()=> {
+            expect(store.getActions()).toEqual(expectedActions)
+        })
     })
 })

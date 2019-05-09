@@ -25,7 +25,7 @@ export const bgLoadStart = () => {
     }
 }
 
-export const bgLoadSuccess = (bgImage, name, url) => {
+export const bgLoadSuccess = (bgImage='', name='', url='') => {
     return {
         type: BG_LOAD_SUCCESS,
         payload: {
