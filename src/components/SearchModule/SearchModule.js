@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import styles from './styles/SearchModule.module.scss'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
+import {history} from '../../store'
 
 import {getLocation} from '../../actions/getLocation'
 import {searchKeyword} from '../../actions/searchKeyword'
@@ -61,10 +62,21 @@ export class SearchModule extends Component {
         this.props.getLocation(null, null, e.target.innerText);
     }
 
-    handleGetBusinessesList = e => {
-        console.log('looking for results');
+    handleGetBusinessesList = (e=null) => {
+        // this would be a valid working way to launch a function to search for results from API + change current path
         this.props.getBusinessesList(this.props.keywordToSearch, this.props.city);
         e.preventDefault();
+
+        history.push(`/businesses/results?term=${this.props.keywordToSearch}&city=${this.props.city}`);
+        // console.log(history);
+    }
+
+    componentDidMount(){
+        window.addEventListener('submit', ()=> this.props.getBusinessesList(this.props.keywordToSearch, this.props.city))
+    }
+    
+    componentWillUnmount(){
+        window.removeEventListener('submit', ()=> this.props.getBusinessesList(this.props.keywordToSearch, this.props.city))
     }
 
     render(){
@@ -103,10 +115,10 @@ export default connect(mapStateToProps, mapDispatchToProps)(SearchModule);
 SearchModule.propTypes = {
     city: PropTypes.string.isRequired,
     keywordToSearch: PropTypes.string.isRequired,
-    autocompleteResults: PropTypes.array.isRequired,
+    autocompleteResults: PropTypes.object.isRequired,
     cities: PropTypes.array.isRequired,
-    lat: PropTypes.number.isRequired,
-    long: PropTypes.number.isRequired,
+    lat: PropTypes.number,
+    long: PropTypes.number,
     getLocation: PropTypes.func.isRequired,
     searchKeyword: PropTypes.func.isRequired,
     autocomplete: PropTypes.func.isRequired,

@@ -36,11 +36,11 @@ export class App extends Component {
     render() {
         return (
             <>
-            <Logo large={window.location.pathname !== '/' ? false : true} />
+            <Logo large={window.location.pathname === '/' ? true : false} />
             <Switch>
                 <Route exact path='/' component={Home} />
-                <Route exact path='/businesses/:category' component={ProductList} />
-                <Route exact path='/businesses/:category/:result' component={Product} />
+                <Route path='/businesses/:results' component={ProductList} />
+                <Route path='/businesses/:results/:item' component={Product} />
             </Switch>
             </>
         );

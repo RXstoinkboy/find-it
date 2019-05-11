@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchModule from './SearchModule/SearchModule'
 
 export const ProductList = () => {
     return (

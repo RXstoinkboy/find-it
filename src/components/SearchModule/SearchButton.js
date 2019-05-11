@@ -5,13 +5,17 @@ import PropTypes from 'prop-types'
 
 export const SearchButton = props => {
     return (
+        // <Link to='hihichrad'>
         <button 
-            // type='submit'
-            className={styles.searchButton}
             onClick={props.handleGetBusinessesList}
+            type='submit'
+            className={styles.searchButton}
+            // {...props}
         >
             <SearchIcon className={styles.searchIcon}/>
         </button>
+        // </Link>
+        
     );
 };
 
