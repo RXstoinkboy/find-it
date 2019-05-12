@@ -5,9 +5,10 @@ import PropTypes from 'prop-types'
 
 import {bgLoad} from '../actions/bgLoad'
 import {geolocation} from '../actions/geolocation'
+// import {history} from '../store'
 
 // components
-import Logo from './Logo'
+// import Logo from './Logo'
 import Home from './Home'
 import ProductList from './ProductList'
 import Product from './Product'
@@ -36,7 +37,7 @@ export class App extends Component {
     render() {
         return (
             <>
-            <Logo large={window.location.pathname === '/' ? true : false} />
+            {/* <Logo large={history.location.pathname === '/' ? true : false} /> */}
             <Switch>
                 <Route exact path='/' component={Home} />
                 <Route path='/businesses/:results' component={ProductList} />

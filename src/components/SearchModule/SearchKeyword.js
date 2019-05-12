@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import styles from './styles/SearchInput.module.scss'
+import styles from './styles/SearchKeyword.module.scss'
 import PropTypes from 'prop-types'
 
 import ResultsMod from './ResultsMod'
+import { AST_Label } from 'terser';
 
 export class SearchKeyword extends Component {
     constructor(props){
@@ -20,17 +21,21 @@ export class SearchKeyword extends Component {
 
     render(){
         return (
-            <div className={styles.wrapper}>
-                <input 
-                    type="search" 
-                    placeholder='Search by name, category etc...' 
-                    onChange={this.props.handleSearch}
-                    onFocus={this.toggleFocus}
-                    onBlur={this.toggleFocus}
-                    value={this.props.keywordToSearch}
-                    className={styles.searchInput} />
-                <ResultsMod {...this.props} focus={this.state.focus}/>
-            </div>
+            <>
+                {this.props.filters && <label for='searchKeyword' className={styles.labelFilters}>search</label>}
+                <div className={styles.wrapper}>
+                    <input 
+                        type="search" 
+                        id='searchKeyword'
+                        placeholder='Search by name, category etc...' 
+                        onChange={this.props.handleSearch}
+                        onFocus={this.toggleFocus}
+                        onBlur={this.toggleFocus}
+                        value={this.props.keywordToSearch}
+                        className={!this.props.filters ? styles.searchInput : styles.searchInputFilters} />
+                    <ResultsMod {...this.props} focus={this.state.focus}/>
+                </div>
+            </>
         );
     }
 };

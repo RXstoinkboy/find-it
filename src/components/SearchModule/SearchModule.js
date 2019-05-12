@@ -68,7 +68,6 @@ export class SearchModule extends Component {
         e.preventDefault();
 
         history.push(`/businesses/results?term=${this.props.keywordToSearch}&city=${this.props.city}`);
-        // console.log(history);
     }
 
     componentDidMount(){
@@ -81,12 +80,12 @@ export class SearchModule extends Component {
 
     render(){
         return (
-            <form className={styles.wrapper}>
+            <form className={!this.props.filters ? styles.wrapper : styles.wrapperFilters}>
                 <SearchKeyword 
                     {...this.props} handleSearch={this.handleSearch} handlePickWord={this.handlePickWord} />
                 <Location 
                     {...this.props} handleSetCity={this.handleSetCity} handlePickCity={this.handlePickCity}/>
-                <SearchButton handleGetBusinessesList={this.handleGetBusinessesList}/>
+                <SearchButton handleGetBusinessesList={this.handleGetBusinessesList} {...this.props}/>
             </form>
         );
     }

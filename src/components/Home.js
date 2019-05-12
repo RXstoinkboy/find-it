@@ -5,12 +5,14 @@ import Slider from './Slider/Slider'
 import UserUtilities from './UserUtilities'
 import SearchModule from './SearchModule/SearchModule'
 import TopCategories from './TopCategories'
+import Logo from './Logo'
 
 import CategoryButton from './CategoryButton'
 
 export const Home = () => {
         return (
             <div className={styles.homeWrapper}>
+            <Logo large />
                 <Slider>
                     {/* <UserUtilities /> */}
                     <div className={styles.searchUtilsWrapper}>

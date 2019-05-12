@@ -32,15 +32,4 @@ a{
   --darkShadow: hsla(0, 0%, 0%, 50%);
 
   --boxShadowTemplate: 2px 4px 12px var(--lightShadow);
-  /* --formBlue: hsla(199, 50%, 60%, 70%);
-  --boxShadowTemplate: 0 0 3px 1px var(--formBlue);
-  
-  --lightGrey: hsl(0, 0%, 80%);
-  --darkGrey: hsla(0, 0%, 40%, 80%);
-
-  --primDark: hsla(0, 0%, 2%, 95%);
-  --secDark: hsla(0, 0%, 2%, 90%);
-  --terDark: hsla(0, 0%, 5%, 90%);
-
-  --pearl: hsla(0, 0%, 95%, 30%); */
 }

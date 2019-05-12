@@ -25,3 +25,30 @@
         color: white;
     }
 }
+
+.searchButtonFilters{
+    height: 33px;
+    width: 33px;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease;
+
+    &:hover .searchIcon{
+        color: var(--darkGrey);
+    }
+
+    &:focus{
+        box-shadow: 0 0 10px var(--serenity);
+    }
+
+    .searchIcon{
+        height: 90%;
+        width: 90%;
+        color: black;
+        transition: all .2s ease;
+    }
+}
