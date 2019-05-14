@@ -5,14 +5,13 @@ import Filter from './Filter.js'
 
 const FilterOptions = () => {
     return (
-        <label className={styles.labelOptions}>
+        <form className={styles.labelOptions}>
             filters
-            <form id='filters' className={styles.options}>
+            <label id='filters' className={styles.options} />
                 <Filter name='price'/>
                 <Filter name='hours'/>
                 <Filter name='rank'/>
-            </form>
-        </label>
+        </form>
     );
 };
 
