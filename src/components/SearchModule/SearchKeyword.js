@@ -22,7 +22,7 @@ export class SearchKeyword extends Component {
     render(){
         return (
             <>
-                {this.props.filters && <label for='searchKeyword' className={styles.labelFilters}>search</label>}
+                {this.props.filters && <label htmlFor='searchKeyword' className={styles.labelFilters}>search</label>}
                 <div className={styles.wrapper}>
                     <input 
                         type="search" 

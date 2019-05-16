@@ -10,7 +10,7 @@ import Results from './Results/Results'
 export const ProductList = () => {
     return (
         <div className={styles.productList}>
-            <div className="topModule">
+            <div className={styles.topModule}>
                 <TopBar />
                 <Filters />
             </div>

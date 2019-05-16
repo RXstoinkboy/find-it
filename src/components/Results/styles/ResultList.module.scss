@@ -1,0 +1,8 @@
+.resultList{
+    list-style: none;
+    display: grid;
+    padding-top: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    overflow-y: scroll;
+}

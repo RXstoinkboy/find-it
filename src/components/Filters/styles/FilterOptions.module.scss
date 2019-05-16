@@ -1,11 +1,16 @@
 .labelOptions{
     display: flex;
     font-size: 1.1rem;
-    align-self: center;
     text-transform: uppercase;
     letter-spacing: -1px;
     padding-left: 24px;
+    align-self: center;
 }
+
+.labelOptionsEnd{
+    align-self: flex-end;
+}
+
 .options{
     font-size: 1.1rem;
     align-self: center;

@@ -22,7 +22,7 @@ export class Location extends Component {
     render(){
         return (
             <>
-                {this.props.filters && <label for='location' className={utils.labelFilters}>place</label>}
+                {this.props.filters && <label htmlFor='location' className={utils.labelFilters}>place</label>}
                 <div className={utils.wrapper}>
                     <input 
                         id='location'

@@ -10,7 +10,7 @@ const Filters = () => {
         <section className={styles.filters}>
             <div className={styles.leftPart}>
                 <SearchModule filters />
-                <FilterOptions />
+                <FilterOptions title='filters'/>
             </div>
             <ResultsNumber />
         </section>

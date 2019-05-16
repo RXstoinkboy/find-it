@@ -1,0 +1,16 @@
+.result{
+    height: 150px;
+    display: flex;
+    transition: all .2s ease;
+
+    &:hover{
+        box-shadow: 1px 2px 12px var(--lightShadow);
+        transform: scale(1.005);
+    }
+}
+
+.leftSide{
+    height: 100%;
+    width: 40%;
+    background: red;
+}

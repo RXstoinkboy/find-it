@@ -3,11 +3,11 @@ import styles from './styles/FilterOptions.module.scss'
 
 import Filter from './Filter.js'
 
-const FilterOptions = () => {
+const FilterOptions = ({title, end}) => {
     return (
-        <form className={styles.labelOptions}>
-            filters
-            <label id='filters' className={styles.options} />
+        <form className={!end ? styles.labelOptions : [styles.labelOptions, styles.labelOptionsEnd].join(' ')}>
+            {title}
+            <label className={styles.options} />
                 <Filter name='price'/>
                 <Filter name='hours'/>
                 <Filter name='rank'/>
