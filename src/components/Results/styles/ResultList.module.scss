@@ -3,6 +3,11 @@
     display: grid;
     padding-top: 10px;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
+    grid-gap: 8px;
+    width: 100%;
     overflow-y: scroll;
+
+    @media all and (max-width: 1400px){
+        grid-template-columns: 1fr;
+    }
 }

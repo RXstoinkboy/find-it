@@ -1,16 +1,85 @@
 .result{
-    height: 150px;
+    // height: 150px;
+    min-width: 300px;
+    padding: 2px;
+    margin: 0 4px;
     display: flex;
-    transition: all .2s ease;
+    transition: all .1s ease;
+    background: white;
 
     &:hover{
-        box-shadow: 1px 2px 12px var(--lightShadow);
-        transform: scale(1.005);
+        box-shadow: 1px 2px 8px var(--lightShadow);
+        transform: translateY(-2px) scale(1.003);
     }
 }
 
 .leftSide{
-    height: 100%;
-    width: 40%;
+    height: 200px;
+    width: 200px;
+    min-width: 200px;
     background: red;
+}
+
+.rightSide{
+    margin-left: 20px;
+    padding: 10px 10px 10px 0;
+    min-width: 200px;
+
+    // .restaurantName{
+    //     // font-size: 18px;
+    //     // text-transform: capitalize;
+    // }
+
+    .rate{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        .stars{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            .star{
+                width: 20px;
+                height: 20px;
+                margin: 0 2px;
+                background: var(--rose);
+                border-radius: 5px;
+                position: relative;
+
+                &::after{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 100%;
+                    height: 100%;
+                    content: '';
+                    background: white;
+                    clip-path: polygon(50% 10%, 61% 36%, 90% 35%, 69% 59%, 82% 90%, 50% 72%, 20% 90%, 31% 59%, 10% 35%, 39% 36%);                }
+            }
+        }
+    }
+
+    .reviewsNum{
+        font-weight: bold;
+    }
+
+    .infoRow{
+        display: flex;
+
+        .price{
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .categories{
+            margin-bottom: 35px;
+            
+            .category{
+                text-transform: capitalize;
+            }
+        }
+    }
 }
