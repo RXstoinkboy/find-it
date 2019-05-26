@@ -19,6 +19,13 @@ export const Results = () => {
                 <Result />
                 <Result />
                 <Result />
+                <Result />
+                <Result />
+                <Result />
+                <Result />
+                <Result />
+                <Result />
+                <Result />
             </ResultList>
             <ResizeSlider />
             <Pages />

@@ -1,9 +1,11 @@
 .results{
     display: flex;
     flex-flow: column wrap;
-    min-height: 100vh;
+    height: 100vh;
     background: white;
     position: fixed;
+    // position: absolute;
+    // overflow: scroll;
     top: 0;
     right: 0;
     padding: 120px 30px 20px 30px;
